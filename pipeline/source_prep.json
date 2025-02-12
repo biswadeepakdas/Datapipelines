@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "CopyGitData",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -30,7 +30,10 @@
 				"inputs": [
 					{
 						"referenceName": "ds_git",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"load_flag": "SalesData.csv"
+						}
 					}
 				]
 			}
