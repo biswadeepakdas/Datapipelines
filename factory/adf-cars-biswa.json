@@ -1,0 +1,9 @@
+{
+	"name": "adf-cars-biswa",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6c2db54d-2419-4da1-80af-836cee268929",
+		"tenantId": "54ab4c66-58b8-4634-9058-eddfabd6c4d4"
+	}
+}
