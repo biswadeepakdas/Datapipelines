@@ -5,6 +5,8 @@
 			{
 				"name": "Copy data1",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -33,6 +35,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select * from water_table",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -42,12 +45,15 @@
 						"parameters": {
 							"table_name": "water_table"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			},
 			{
 				"name": "current_load",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
