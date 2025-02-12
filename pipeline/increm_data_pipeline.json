@@ -22,7 +22,10 @@
 					},
 					"dataset": {
 						"referenceName": "ds_sqlDB",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"table_name": "water_table"
+						}
 					}
 				}
 			},
