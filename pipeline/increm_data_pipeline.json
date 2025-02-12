@@ -1,5 +1,5 @@
 {
-	"name": "increm_pipeline",
+	"name": "increm_data_pipeline",
 	"properties": {
 		"activities": [
 			{
