@@ -5,8 +5,6 @@
 			{
 				"name": "last_load",
 				"type": "Lookup",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -62,10 +60,8 @@
 				}
 			},
 			{
-				"name": "Copy data1",
+				"name": "Copy_Increm_Data",
 				"type": "Copy",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "last_load",
