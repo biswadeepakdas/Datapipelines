@@ -77,9 +77,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
+						"type": "ParquetSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "ParquetReadSettings"
+						}
 					},
 					"sink": {
 						"type": "AzureSqlSink",
@@ -98,7 +104,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_sqlDB",
+						"referenceName": "ds_broze",
 						"type": "DatasetReference"
 					}
 				],
