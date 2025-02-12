@@ -5,6 +5,8 @@
 			{
 				"name": "last_load",
 				"type": "Lookup",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -46,7 +48,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select max(Date_ID) as max_date from source_cars_f",
+						"sqlReaderQuery": "select max(Date_ID) as max_date from source_cars_data",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
