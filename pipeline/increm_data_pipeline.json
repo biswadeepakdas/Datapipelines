@@ -64,6 +64,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select max_dateID",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -71,9 +72,10 @@
 						"referenceName": "ds_sqlDB",
 						"type": "DatasetReference",
 						"parameters": {
-							"table_name": "source-cars_data"
+							"table_name": "source_cars_data"
 						}
-					}
+					},
+					"firstRowOnly": false
 				}
 			}
 		],
