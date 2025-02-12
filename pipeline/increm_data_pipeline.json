@@ -5,7 +5,20 @@
 			{
 				"name": "Copy_increm_data",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "last_load",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "current_load",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -17,6 +30,10 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "select * from source_cars_data where ddate_ID>",
+							"type": "Expression"
+						},
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
