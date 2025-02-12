@@ -19,7 +19,7 @@
 				}
 			},
 			{
-				"name": "Lookup1",
+				"name": "last_load",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -29,10 +29,21 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "ds_sqlDB",
+						"type": "DatasetReference"
+					}
+				}
 			},
 			{
-				"name": "Lookup2",
+				"name": "current_load",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
