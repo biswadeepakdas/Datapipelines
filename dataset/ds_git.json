@@ -15,7 +15,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "HttpServerLocation",
-				"relativeUrl": "anshlambagit/Azure-DE-Project-Resources/refs/heads/main/Raw%20Data/SalesData.csv"
+				"relativeUrl": {
+					"value": "anshlambagit/Azure-DE-Project-Resources/refs/heads/main/Raw%20Data/@{dataset().load_flag}",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
