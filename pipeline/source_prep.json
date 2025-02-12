@@ -25,7 +25,20 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -34,6 +47,12 @@
 						"parameters": {
 							"load_flag": "SalesData.csv"
 						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_sqlDB",
+						"type": "DatasetReference"
 					}
 				]
 			}
